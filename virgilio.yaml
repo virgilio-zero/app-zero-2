@@ -3,3 +3,45 @@ tool: claude-code
 app:
   name: app-zero-2
   private: false
+github:
+  repo: virgilio-zero/app-zero-2
+  private: false
+  production_branch: main
+  protection: enforced
+supabase:
+  org_id: ucviinlthbxtlawebhwu
+  org_slug: ucviinlthbxtlawebhwu
+  production:
+    ref: lmxqhybtvclhhnikvdny
+    region: us-east-1
+  staging:
+    ref: trtilfbpyjtmfjmosmha
+    region: us-east-1
+    kind: cloud
+  migrations: supabase/migrations
+  baseline: 20261020000000_base.sql
+railway:
+  status: local
+work:
+  branching: epic
+ai_rules:
+  files:
+    - AGENTS.md
+    - CLAUDE.md
+    - .claude/settings.json
+    - .mcp.json
+  enforcement: hook
+backup:
+  automatic: virgilio-daily
+  public_key: vgbpub1_yh5yMst2_J7sll50-SQxEb-7Oyy7pEZmhG_tna_Bd2E
+  workflow: .github/workflows/virgilio-backup.yml
+  schedule:
+    frequency: daily
+    weekday: 1
+    hour: 3
+    cron: 17 6 * * *
+    label: todo dia às 03:00
+guardrails:
+  hooks: .githooks
+  virgilio_version: 0.11.0
+  required_checks: true

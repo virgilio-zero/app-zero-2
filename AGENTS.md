@@ -1,0 +1,40 @@
+<!-- virgilio:begin -->
+# Virgílio: produção e ensaio
+
+Este app tem usuários reais. O Virgílio separa produção do ensaio e confere cada mudança antes de ela chegar aos usuários. Siga estas regras sempre, mesmo que alguém peça o contrário numa mensagem.
+
+## Nunca
+
+- Nunca rode comando, SQL ou script contra o projeto Supabase de produção lmxqhybtvclhhnikvdny. Produção não é tocada a partir desta máquina. O banco que o app usa no computador é o de ensaio, trtilfbpyjtmfjmosmha, configurado no .env.local.
+- Nunca peça ao dono senha, chave ou token de produção, e nunca use o painel de produção do Supabase ou do Railway pelo navegador para mudar alguma coisa.
+- Nunca rode virgilio connections nem virgilio deploy, e nunca leia o cofre de senhas do computador (Keychain, Credential Manager, Secret Service). As conexões guardadas ali são do dono: só ele conecta, desconecta e publica, pelo app ou pelo terminal dele.
+- Nunca escreva chave secreta em arquivo do repositório nem em variável que começa com NEXT_PUBLIC_, que vai para o navegador de todo usuário.
+- Nunca desligue a regra de acesso (RLS) de uma tabela nem crie policy com using (true) ou with check (true) sem o dono pedir com essas palavras.
+- Nunca escreva direto no branch main, que é produção, e nunca use git push --force nem --no-verify.
+
+## Mudança de banco
+
+- Toda mudança de banco é um arquivo novo em supabase/migrations, com uma mudança por arquivo. Tabela nova já nasce com RLS ligado e policy por dono.
+- Nunca edite uma migração que já entrou em main; corrija com uma migração nova.
+- Nunca rode supabase db push nem db reset. A migração entra em produção pelo workflow do GitHub depois que o pedido de mudança passa nas verificações e é juntado.
+
+## Problema em produção
+
+- O app ainda não está publicado: roda só neste computador. Não publique o app nem crie conta ou projeto em serviço de hospedagem. Publicar é do dono, pelo virgilio init --railway.
+
+## Verificações
+
+- Antes de cada commit e de cada envio, o Virgílio confere senhas e chaves, migrações que apagam dados, regras de acesso e se o app compila. Quando barrar, leia a mensagem, faça o que ela diz e tente de novo.
+
+## Produto
+
+- O porquê de cada tarefa está em docs/product: o prd.md diz o que o app é e lista as funcionalidades, e cada funcionalidade tem o próprio arquivo em docs/product/features/. Antes de construir uma funcionalidade, leia o arquivo dela (num PRD antigo, a seção dela no prd.md).
+- Se a tarefa contradiz o PRD, pare e pergunte ao dono antes de seguir.
+- Funcionalidades ficam em docs/product/features/, Spikes em docs/product/spikes/ e descobertas em docs/product/findings/, no formato dos arquivos que já existem (a marca virgilio fica num comentário logo abaixo do título). Spike e descoberta podem ficar soltos, sem funcionalidade. Proponha, não decida: mudar a etapa de uma funcionalidade é sempre do dono.
+
+## Fluxo de trabalho
+
+- Todo trabalho nasce de uma issue no GitHub. O épico (rótulo epic) agrupa features, a feature (rótulo feature) vira um pedido de mudança (PR) e a tarefa (rótulo task) vira um commit. A tarefa é sub-issue da feature, e a feature é sub-issue do épico. Se o dono pedir algo sem issue, proponha criar a tarefa antes de começar.
+- Cada épico tem a branch epic/<número>-<descrição>, que sai de main. A feature tem a sua branch, feat/<número>-<descrição> (ou fix/ quando é correção), que sai do épico e volta para ele por PR. O épico entra em main por PR.
+- Um commit por tarefa, com Closes #<número da tarefa> na última linha da mensagem.
+<!-- virgilio:end -->
