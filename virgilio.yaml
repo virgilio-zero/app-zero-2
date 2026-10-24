@@ -1,0 +1,5 @@
+version: 1
+tool: claude-code
+app:
+  name: app-zero-2
+  private: false
