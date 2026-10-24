@@ -1,5 +1,5 @@
 # Criar lembrete em uma linha
-<!-- virgilio:feature id=criacao-em-uma-linha stage=open -->
+<!-- virgilio:feature id=criacao-em-uma-linha stage=building epic=13 -->
 
 ## O que é
 
@@ -37,3 +37,7 @@ Serve ao "Para quem" do prd.md: a pessoa cria o lembrete na hora em que fica sab
 - Meta proposta: 80% na primeira turma. Abaixo disso, vale considerar a IA.
 
 **Proteção: volta depois do primeiro aviso.** A métrica principal do prd.md. Se a criação em uma linha errar a data sem a pessoa perceber, o aviso chega na hora errada e a volta cai. Comparar a volta de quem criou pela linha com a de quem usou os campos.
+
+## Descobertas e Spikes
+<!-- virgilio:items -->
+<!-- virgilio:items-end -->
