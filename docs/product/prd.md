@@ -32,4 +32,5 @@ Cada funcionalidade tem um arquivo próprio em docs/product/features, com a etap
 
 <!-- virgilio:features -->
 - [Lembrete único com notificação no celular](features/lembrete-unico.md)
+- [Criar lembrete em uma linha](features/criacao-em-uma-linha.md)
 <!-- virgilio:features-end -->
