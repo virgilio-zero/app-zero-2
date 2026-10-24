@@ -11,11 +11,12 @@ O app hoje é um site (Next.js). Dá para fazer a notificação chegar no celula
 - No Android, funciona direto pelo Chrome, sem instalar nada.
 - No iPhone, só funciona se a pessoa adicionar o site à tela de início, e só a partir do iOS 16.4. Esse passo extra pode afastar parte dos estudantes.
 - Alguém precisa disparar o envio na hora certa: um processo agendado no servidor que verifica, a cada minuto, os lembretes que venceram.
+- Precisão do horário decidida pelo dono: o aviso pode chegar até 2 minutos depois da hora marcada (ver "Como saber que deu certo" no prd.md).
 
 ## O que o Spike precisa responder
 
 - Quanto o passo de "adicionar à tela de início" no iPhone pesa para o público estudante? Qual a proporção iPhone/Android entre eles?
-- Qual a precisão do horário: chegar no minuto certo ou alguns minutos de atraso é aceitável?
+- O agendador escolhido consegue entregar 95% dos avisos em até 2 minutos?
 - Onde roda o agendador (Railway, função agendada do Supabase) e quanto custa.
 - Se Web Push não bastar, qual a alternativa: app nativo, ou um canal como WhatsApp ou e-mail como reserva.
 

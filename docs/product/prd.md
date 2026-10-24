@@ -14,7 +14,17 @@ Estudantes que usam o celular o dia todo e precisam lembrar de compromissos úni
 
 ## Como saber que deu certo
 
-Um número que você consegue medir depois de publicar, com o valor de hoje e o que você espera.
+**Volta depois do primeiro aviso.** Porcentagem de estudantes que criam outro lembrete em até 14 dias depois que o primeiro lembrete disparou. Quem recebeu o aviso na hora confia no app e volta; quem perdeu o compromisso não volta.
+
+- Hoje: sem dados, o app ainda não foi publicado.
+- Meta: 40% na primeira turma de teste, com cerca de 30 estudantes.
+
+**Proteção: aviso no horário.** Porcentagem de lembretes cuja notificação chegou até 2 minutos depois da hora marcada. Se a volta cair, este número diz se o problema é o produto ou a entrega do aviso.
+
+- Hoje: sem dados.
+- Meta: 95% dos avisos em até 2 minutos.
+
+Ficaram de fora como métrica principal o total de lembretes criados, que cresce até com quem nunca recebeu um aviso, e a taxa de permissão de notificação concedida, que é um passo do caminho e não o resultado.
 
 # Funcionalidades
 
