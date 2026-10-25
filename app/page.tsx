@@ -26,7 +26,7 @@ export default function Home() {
       setMessage("Conta criada. Confira o seu e-mail para confirmar e depois entre.");
       return;
     }
-    router.push("/notes");
+    router.push("/reminders");
   }
 
   return (
