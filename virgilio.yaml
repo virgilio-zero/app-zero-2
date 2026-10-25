@@ -45,3 +45,8 @@ guardrails:
   hooks: .githooks
   virgilio_version: 0.11.0
   required_checks: true
+agent:
+  tools:
+    - claude-code
+    - codex
+  default: claude-code

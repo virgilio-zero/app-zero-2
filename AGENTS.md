@@ -9,6 +9,8 @@ Este app tem usuários reais. O Virgílio separa produção do ensaio e confere 
 - Nunca peça ao dono senha, chave ou token de produção, e nunca use o painel de produção do Supabase ou do Railway pelo navegador para mudar alguma coisa.
 - Nunca rode virgilio connections nem virgilio deploy, e nunca leia o cofre de senhas do computador (Keychain, Credential Manager, Secret Service). As conexões guardadas ali são do dono: só ele conecta, desconecta e publica, pelo app ou pelo terminal dele.
 - Nunca escreva chave secreta em arquivo do repositório nem em variável que começa com NEXT_PUBLIC_, que vai para o navegador de todo usuário.
+- Nunca invente valor de variável de ambiente nem escreva no .env.local. Quando o código precisar de variável nova, acrescente o nome ao .env.example com o valor vazio e um comentário de uma linha logo acima dizendo de onde vem (segredo gerado, Supabase, chave de um serviço, valor comum). O Virgílio pede os valores ao dono na revisão da sessão.
+- Na sessão aberta pelo Virgílio, nunca suba o servidor de desenvolvimento (npm run dev, next dev) nem instale ou remova dependência (npm install, npm uninstall e os equivalentes do pnpm, yarn e bun). O Virgílio mostra o app ao dono na prévia e instala as dependências: para uma dependência nova, acrescente a linha no package.json com a versão e siga.
 - Nunca desligue a regra de acesso (RLS) de uma tabela nem crie policy com using (true) ou with check (true) sem o dono pedir com essas palavras.
 - Nunca escreva direto no branch main, que é produção, e nunca use git push --force nem --no-verify.
 
