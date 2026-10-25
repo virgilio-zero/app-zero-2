@@ -31,5 +31,6 @@ Ficaram de fora como métrica principal o total de lembretes criados, que cresce
 Cada funcionalidade tem um arquivo próprio em docs/product/features, com a etapa numa marca logo abaixo do nome. A lista abaixo o Virgílio mantém em dia; crie a primeira pela tela Produto.
 
 <!-- virgilio:features -->
-- [Lembrete único com notificação no celular](features/lembrete-unico.md)
+- [Lembrete único com notificação no celular](features/lembrete-unico.md): em aberto
+- [Criar lembrete em uma linha](features/criacao-em-uma-linha.md): em construção
 <!-- virgilio:features-end -->

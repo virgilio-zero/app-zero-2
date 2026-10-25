@@ -11,7 +11,7 @@ O estudante cria um lembrete com um texto curto, uma data e uma hora. Nesse mome
 
 ## Como funciona
 
-- Criar: texto, data e hora. Nada mais é obrigatório.
+- Criar: texto, data e hora. Nada mais é obrigatório. A tela de criar passa a ser um campo único, em que a pessoa escreve tudo numa linha: ver criacao-em-uma-linha.
 - Listar: os próximos lembretes em ordem de data, e os que já passaram separados.
 - Editar e apagar um lembrete que ainda não disparou.
 - Na primeira vez, o app pede permissão para mandar notificações e explica por quê.
