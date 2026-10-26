@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 
@@ -10,6 +10,12 @@ export default function Home() {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState<string | null>(null);
   const [busy, setBusy] = useState(false);
+
+  useEffect(() => {
+    void supabase.auth.getSession().then(({ data }) => {
+      if (data.session) router.replace("/reminders");
+    });
+  }, [router]);
 
   async function submit(mode: "signIn" | "signUp") {
     setBusy(true);
@@ -26,7 +32,7 @@ export default function Home() {
       setMessage("Conta criada. Confira o seu e-mail para confirmar e depois entre.");
       return;
     }
-    router.push("/notes");
+    router.push("/reminders");
   }
 
   return (
