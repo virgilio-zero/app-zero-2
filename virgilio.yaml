@@ -49,4 +49,5 @@ agent:
   tools:
     - claude-code
     - codex
+    - cursor
   default: claude-code
